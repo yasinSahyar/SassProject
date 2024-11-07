@@ -212,98 +212,43 @@ nav {
     background-color: lighten($renk,30%); //#ffdb99;
 }
 */
-/*
-$renk : rgb(248, 132, 114);
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100hv;
-    margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100hv;
+  margin: 0;
 }
+
 .box1,
 .box2,
 .box3,
 .box4,
 .box5 {
-    padding: 10vh;
-    border-radius: 50%;
+  padding: 10vh;
+  border-radius: 50%;
 }
+
 nav {
-    background-color: darken($renk, 100%);
+  background-color: black;
 }
+
 .box1 {
-    background-color: darken($renk,10%);
+  background-color: #f65a41;
 }
+
 .box2 {
-    background-color: darken($renk,20%);
+  background-color: #f32f11;
 }
+
 .box3 {
-    background-color: darken($renk,30%);
+  background-color: #c7230a;
 }
+
 .box4 {
-    background-color: darken($renk,40%);
+  background-color: #971b07;
 }
+
 .box5 {
-    background-color: darken($renk,50%);
-}
-*/
-.color-1 {
-  color: red;
-}
-
-.color-2 {
-  color: green;
-}
-
-.color-3 {
-  color: blue;
-}
-
-.color-4 {
-  color: gray;
-}
-
-.color-5 {
-  color: tomato;
-}
-
-.color-6 {
-  color: red;
-}
-
-.color-7 {
-  color: green;
-}
-
-.color-8 {
-  color: blue;
-}
-
-.color-9 {
-  color: gray;
-}
-
-.color-10 {
-  color: tomato;
-}
-
-.color-11 {
-  color: red;
-}
-
-.color-12 {
-  color: green;
-}
-
-.color-13 {
-  color: blue;
-}
-
-.color-14 {
-  color: gray;
-}
-
-.color-15 {
-  color: tomato;
+  background-color: #661205;
 }/*# sourceMappingURL=style.css.map */

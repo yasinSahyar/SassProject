@@ -1,3 +1,5 @@
+
+//? (1)*Nesting Structure
 /*
 ul{
     background-color: lightseagreen;
@@ -39,7 +41,7 @@ ul{
 */
 
 
-// each yapisi
+//? (2)*each Structure
 /*
 $colors : darkblue, gray, red, tomato;
 @each $colors in $colors {
@@ -51,7 +53,7 @@ $colors : darkblue, gray, red, tomato;
 
 
 
-//Mixin Yapisi
+//? (3)*Mixin Structure
 /*
 html, body {
     min-height: 100vh;
@@ -78,11 +80,11 @@ html, body {
 
 
 
-// Map Yapisi
+// Map Structure
 
 
 
-//Extend - miras alma 
+//? (4)*Extend - inheritance 
 /*
 %btn {
     padding: 10px 15px;
@@ -108,7 +110,7 @@ html, body {
 
 
 
-// Operatörler  -- https://www.youtube.com/watch?v=jiB-AJNPTSo&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=11
+//? (5)*Operators     -- https://www.youtube.com/watch?v=jiB-AJNPTSo&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=11
 /*
 body::after {
     content: 5 > 4;
@@ -120,7 +122,7 @@ body::after {
 */
 
 
-// IF ELSE - Karar Yapıları
+//? (6)*IF ELSE - decision structure
 /*
 $tema : "kahve";
 @if($tema == "koyu"){
@@ -135,7 +137,7 @@ $tema : "kahve";
 */
 
 
-//Fonksiyonlar
+//? (7)*Functions   
 /*
 @function ekle($sayi1, $sayi2) {
     @return $sayi1 + $sayi2;
@@ -147,7 +149,7 @@ $tema : "kahve";
 */
 
 
-//String Fonksiyonlar
+//? (8)*String Functions
 /*
 $degisken : "biskilet";
 
@@ -163,7 +165,7 @@ body::after {
 */
 
 
-//Number Fonksiyonlar
+//? (9)* Number Functions
 /*
 body {
     width: abs($number: -35); //35
@@ -181,7 +183,7 @@ body {
 }
 */
 
-//List Fonksiyonlar  --- https://www.youtube.com/watch?v=0eaxKcqVDZg&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=16
+//? (10)* List Functions  --- https://www.youtube.com/watch?v=0eaxKcqVDZg&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=16
 /*
 $liste : 5px 14px solid red; 
 $liste2 : dashed green solid tomato;
@@ -203,7 +205,7 @@ nav {
 }
 */
 
-//Map Fonksiyonlar
+//? (11)* Map Functions
 /*
 $renkler : (
     primary : blue,
@@ -230,7 +232,8 @@ body {
 }
 */
 
-//Color Fonksiyonlar
+
+//? (12)*Color Functions
 
 /*
 $renk : orange;
@@ -252,7 +255,8 @@ nav {
     background-color: lighten($renk,30%); //#ffdb99;
 }
 */
-/*
+
+
 $renk : rgb(248, 132, 114);
 body {
     display: flex;
@@ -287,25 +291,14 @@ nav {
 .box5 {
     background-color: darken($renk,50%);
 }
-*/
-
-
-//While Döngüsü
 
 
 
+//While Loop
 
-//For Döngüsü
 
-$renkler : red green blue gray tomato
- red green blue gray tomato
- red green blue gray tomato;
 
-@for $i from 1 through length($renkler) {
-    .color-#{$i} {
-        color: nth($renkler, $i);
-    }
-}
+
 
 
 
