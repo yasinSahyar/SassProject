@@ -1,0 +1,313 @@
+/*
+ul{
+    background-color: lightseagreen;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+        background-color: coral;
+
+        a{
+            display: block;
+            padding: 10px;
+            background: {
+                color: rgb(186, 12, 12);
+                image:url(/goshPolo.jpg);
+                attachment:fixed;
+                repeat:no-repeat;
+            };
+            font: {
+                size: 16px;
+                family: verdana;
+            };
+
+            &:hover{
+                background-color: antiquewhite;
+            }
+        }
+        
+    }
+}
+*/
+/*-------https://www.youtube.com/watch?v=Pm1jmnjex3k&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=6--------------*/
+
+/*
+@import "reset";
+@import "menu";
+*/
+
+
+// each yapisi
+/*
+$colors : darkblue, gray, red, tomato;
+@each $colors in $colors {
+    .bg-darkblue {
+        background-color: $colors;
+    }
+}
+*/
+
+
+
+//Mixin Yapisi
+/*
+html, body {
+    min-height: 100vh;
+}
+
+@mixin kutu($genislik:500px, $yukseklik: 250px, $renk:red) {
+    width: $genislik;
+    height: $yukseklik;
+    background-color: $renk;
+}
+.kutu1 {
+    @include kutu(100px, 200px, aqua);
+}
+
+.kutu2 {
+    @include kutu(200px, 1500px, blue);
+}
+
+.kutu3 {
+    @include kutu();
+}
+*/
+
+
+
+
+// Map Yapisi
+
+
+
+//Extend - miras alma 
+/*
+%btn {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    color: #eee;
+}
+
+.btn-danger{
+    background-color: orangered;
+    @extend %btn;
+}
+.btn-primary{
+    background-color: lightseagreen;
+    @extend %btn;
+}
+.btn-dark{
+    background-color: blueviolet;
+    @extend %btn;
+}
+*/
+
+
+
+// Operatörler  -- https://www.youtube.com/watch?v=jiB-AJNPTSo&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=11
+/*
+body::after {
+    content: 5 > 4;
+    content: 5 <= 4;
+    content: (52 <= 5) and (4 == 4);
+    content: (52 <= 5) or (4 == 4);
+    content: (52 <= 5) not (4 == 4);
+}
+*/
+
+
+// IF ELSE - Karar Yapıları
+/*
+$tema : "kahve";
+@if($tema == "koyu"){
+    body {background-color: black;}
+}@else if($tema == "mavi"){
+    body {background-color: lightseagreen;}
+}@else if($tema == "kahve"){
+    body {background-color: lightsalmon;}
+}@else {
+    body { background-color: chartreuse;}
+}
+*/
+
+
+//Fonksiyonlar
+/*
+@function ekle($sayi1, $sayi2) {
+    @return $sayi1 + $sayi2;
+};
+.box1 {
+    z-index: ekle(2,3 );
+    width: ekle(200,300 );
+}
+*/
+
+
+//String Fonksiyonlar
+/*
+$degisken : "biskilet";
+
+body::after {
+    content: str-insert($degisken, "5px", -1); //biskilet5px
+    content: str-insert($degisken, "5px", 2);  //b5pxiskilet
+    content: str-length($degisken);  //8
+    content: str-slice("turkiye",3,6); //"rkiy"
+    content: to-upper-case("finland"); //"FINLAND"
+    content: unique_id(); //uej35xm;--her refresh yaptiginda degisyor
+
+}
+*/
+
+
+//Number Fonksiyonlar
+/*
+body {
+    width: abs($number: -35); //35
+    width: ceil(4.3); //5
+    width: floor(4.6); //4
+    width: round(4.4); //4
+    width: round(4.7); //5
+    width: percentage(0.65); //65%
+    width: max(12,26,18,75,29,55,32); //75
+    width: min(12,26,18,75,29,55,32); //12
+    width: unit(32rem); //"rem"
+    width: unit(32px); //"px"
+    width: random(100); //0~100-her refresh yaptiginda degisyor
+
+}
+*/
+
+//List Fonksiyonlar  --- https://www.youtube.com/watch?v=0eaxKcqVDZg&list=PLjlgAwCIJLUp4CGkvYbcKWmdBji8CsrY7&index=16
+/*
+$liste : 5px 14px solid red; 
+$liste2 : dashed green solid tomato;
+$liste3 : black red brown;
+
+nav {
+    background:$liste; //5px 14px solid red;
+    background: append($liste,blue); //5px 14px solid red blue;
+    background: index($liste,solid); //3
+
+    background: join($liste, $liste2); //5px 14px solid red dashed green solid tomato;
+    background: nth($liste, 3); //solid;
+    background: set_nth($liste, 3,green); //5px 14px green red;
+    
+    //zip listelerin elimintlerini dikey olarak birlestiryor
+    background: zip($liste, $liste2,$liste3); //5px dashed black, 14px green red, solid solid brown;
+
+
+}
+*/
+
+//Map Fonksiyonlar
+/*
+$renkler : (
+    primary : blue,
+    danger : red,
+    warning : orange,
+    success : green,
+    dark : black
+);
+$renkler2 : (
+    nav :purple,
+    kenarlik :solid,
+    kalinlik : 13px
+);
+$yeniMap : map-merge($renkler, $renkler2);
+//map-get
+body {
+    background: map-get($renkler, warning); //orange;
+    background: map-has-key($renkler, success); //true;--listede varmi yokmu?
+    background: map-has-key($renkler, tomato); //false;
+    background: map-keys($renkler); //primary, danger, warning, success, dark;
+
+    background: map-keys($yeniMap); //primary, danger, warning, success, dark, nav, kenarlik, kalinlik;
+
+}
+*/
+
+//Color Fonksiyonlar
+
+/*
+$renk : orange;
+body {
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    border: 50px solid $renk;
+    background-color: grayscale(green); // #404040;-gray tonlarna gore renk veryor
+    background-color: complement($renk); //#005aff;   --verdigimiz renkin tamamlayici renkini veryor
+    background-color: invert($renk,50%); // gray; -- zit renkini veryor
+   
+}
+nav {
+ 
+    background-color: red(orange); //255;-rengin icinde 255 red var anlamina gelir
+    background-color: mix(blue,red); //purple;--blue ile red in karsimi
+
+    background-color: lighten($renk,30%); //#ffdb99;
+}
+*/
+/*
+$renk : rgb(248, 132, 114);
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100hv;
+    margin: 0;
+}
+.box1,
+.box2,
+.box3,
+.box4,
+.box5 {
+    padding: 10vh;
+    border-radius: 50%;
+}
+nav {
+    background-color: darken($renk, 100%);
+}
+.box1 {
+    background-color: darken($renk,10%);
+}
+.box2 {
+    background-color: darken($renk,20%);
+}
+.box3 {
+    background-color: darken($renk,30%);
+}
+.box4 {
+    background-color: darken($renk,40%);
+}
+.box5 {
+    background-color: darken($renk,50%);
+}
+*/
+
+
+//While Döngüsü
+
+
+
+
+//For Döngüsü
+
+$renkler : red green blue gray tomato
+ red green blue gray tomato
+ red green blue gray tomato;
+
+@for $i from 1 through length($renkler) {
+    .color-#{$i} {
+        color: nth($renkler, $i);
+    }
+}
+
+
+
+
+
